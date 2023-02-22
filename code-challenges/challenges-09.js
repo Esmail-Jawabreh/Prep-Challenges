@@ -19,12 +19,10 @@
 //  
 
 const arrInc = (arr) => {
-
     // write your code here
-    for (let i = 0; i < arr.length; i++) {
+    arr.forEach((x, i, arr) => {
         arr[i] += 10;
-    }
-
+    });
 
     return arr;
 }
@@ -44,10 +42,9 @@ const arrInc = (arr) => {
 // 
 const roundDecimals = (arr) => {
     // write your code here
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = Math.round(arr[i]);
-    }
-
+    arr.forEach((x, i, arr) => {
+        arr[i] = Math.round(x);
+    });
 
     return arr;
 }
@@ -120,17 +117,17 @@ const roundDecimals = (arr) => {
 const employeesBonus = (arr) => {
     // write your code here
     const bonusForMoreThan8Hours = 100;
-  const bonusForLessThan8Hours = 50;
+    const bonusForLessThan8Hours = 50;
 
-  for (let employee of arr) {
-    if (employee.workHours > 8) {
-      employee.salary = (parseInt(employee.salary) + bonusForMoreThan8Hours) + "$";
-    } else {
-        employee.salary = (parseInt(employee.salary) + bonusForLessThan8Hours) + "$";
-    }
-}
+    arr.forEach((employee) => {
+        if (employee.workHours > 8) {
+            employee.salary = (parseInt(employee.salary) + bonusForMoreThan8Hours) + "$";
+        } else {
+            employee.salary = (parseInt(employee.salary) + bonusForLessThan8Hours) + "$";
+        }
+    });
 
-  return arr;
+    return arr;
 }
 
 // -------------------------------------------------------------------------------------------------------
@@ -153,14 +150,14 @@ const employeesBonus = (arr) => {
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
     // write your code here
     let mostExpensivePrice = 0;
-    for (let mousePrice of mouseArray) {
-        for (let keyboardPrice of keyBoardArray) {
+    mouseArray.forEach((mousePrice) => {
+        keyBoardArray.forEach((keyboardPrice) => {
             let totalPrice = mousePrice + keyboardPrice;
             if (totalPrice > mostExpensivePrice && totalPrice <= budget) {
                 mostExpensivePrice = totalPrice;
             }
-        }
-    }
+        });
+    });
     return mostExpensivePrice;
 }
 // -------------------------------------------------------------------------------------------------------
