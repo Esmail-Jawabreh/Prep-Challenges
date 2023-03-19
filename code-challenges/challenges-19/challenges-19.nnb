@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n    // Write your code here\n    let sLen = s.length;\n    let tLen = t.length;\n    let minLen = Math.min(sLen, tLen);\n    let commonLen = 0;\n\n    for (let i = 0; i < minLen; i++) {\n        if (s[i] == t[i]) {\n            commonLen++;\n        } else {\n            break;\n        }\n    }\n\n    let totalMoves = sLen + tLen - 2 * commonLen;\n\n    if (totalMoves <= k && (totalMoves - k) % 2 == 0 || k >= sLen + tLen) {\n        return \"Yes\";\n    } else {\n        return \"No\";\n    }\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function encryption(s) {\n    // Write your code here\n    s = s.replace(/\\s+/g, ''); \n    let len = s.length;\n    let rows = Math.floor(Math.sqrt(len)); \n    let cols = Math.ceil(Math.sqrt(len)); \n    let result = '';\n\n\n    for (let i = 0; i < cols; i++) {\n        for (let j = i; j < len; j += cols) {\n            result += s.charAt(j);\n        }\n        result += ' '; \n    }\n\n    return result.trim(); \n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
